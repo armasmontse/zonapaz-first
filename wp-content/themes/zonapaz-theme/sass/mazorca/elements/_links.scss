@@ -1,0 +1,37 @@
+%link {
+	cursor: pointer;
+	text-decoration: none;
+
+	&:hover,
+	&:active,
+	.selected {
+	}
+}
+
+ /* B I O */
+%link-boton-biografia {
+	@extend %opensans-bold;
+	font-size: 18px;
+	line-height: 29px;
+
+	&:hover {
+		background: c(yellow);
+		cursor: pointer;
+	}
+
+	&::before {
+		content: "~";
+	}
+}
+
+%link-boton-crono {
+	@extend %link-boton-biografia;
+
+	&:hover {
+		background: c(yellow-light);
+		cursor: pointer;
+	}
+	&::before {
+		content: "";
+	}
+}

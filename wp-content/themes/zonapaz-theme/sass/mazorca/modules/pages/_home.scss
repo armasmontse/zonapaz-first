@@ -1,0 +1,102 @@
+$col-1: 100%/12;
+/*width: calc(#{$col-1} * 8);*/
+
+.home {
+	@include under(sm) {
+		padding-top: 25px;
+	}
+
+	/* B a n n e r */
+	.banner {
+		background: c(yellow);
+
+		.grid__container--fluid {
+			display: flex;
+			@include under(mobile) {
+				flex-wrap: wrap;
+			}
+		}
+
+		&__titulo {
+			@extend %titulo-home-banner;
+		}
+
+
+		.franja-blanca {
+			width: 60%;
+			@include under(mobile) {
+				width: 100%;
+			}
+
+			.box {
+
+				&__aspect {
+					@extend %box-aspect-ratio;
+					padding-bottom: 52%;
+
+					&--imagen {
+						@extend %imagen-aspect-ratio;
+					}
+				}
+
+				&__creditos {
+					@extend %creditos-banner-home;
+					@extend %flex-center-xy;
+					height: 25px;
+					//position: absolute;
+				    //bottom: 0;
+				    width: 100%;
+					background: rgba(0, 0, 0, 0.45);
+					
+					em {
+						font-style: italic;
+					}
+				}
+			}
+		}
+		.franja-amarilla {
+			width: 40%;
+			@include under(mobile) {
+				width: 100%;
+			}
+
+			&__contenedor {
+				height: 100%;
+			    width: 100%;
+			    max-width: 400px;
+			    display: flex;
+			    justify-content: center;
+			    align-items: flex-end;
+			    padding-bottom: 70px;
+			    padding-left: 20px;
+
+			    @include under(sm) {
+					padding-bottom: 40px;
+			    }
+			    @include under(mobile) {
+					padding: 40px 20px;
+					max-width: 100%;
+				}
+			}
+		}
+	}
+
+	/* I m a g e n */
+	.full-image {
+		width: 100%;
+		margin: 60px 0 20px;
+
+		&__container {
+			width: 100%;
+			max-width: $container-max-width;
+			margin: 0 auto;
+			padding: 0 20px;
+		}
+
+		&__imagen {
+			max-height: 78vh;
+			width: auto;
+			margin: 0 auto;
+		}
+	}
+}

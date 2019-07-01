@@ -1,0 +1,364 @@
+.archivo {
+	margin-top: 35px;
+	display: flex;
+	width: 100%;
+	@include under(mobile) {
+		flex-direction: column;
+	}
+
+	.medio {
+		@extend %medio-single-titulo;
+		margin: 0 0 65px 20px;
+		@include under(mobile) {
+			margin: 0 0 30px 20px;
+		}
+	}
+
+	/* C o n t e n i d o */
+	.contenido {
+		width: 65%;
+		@include under(mobile) {
+			width: 100%;
+		}
+
+		&__contenedor {
+			width: 90%;
+			max-width: 570px;
+			margin: 0 auto;
+			@include under(mobile) {
+				width: 100%;
+			}
+		}
+
+	    &__titulo {
+	    	@extend %single-post-titulo-archivo;
+	    	@extend %contenido-wysiwyg;
+	    }
+
+	    &__credito {
+	    	@extend %single-post-credito-archivo ;
+        }
+
+        &__share {
+            @extend %bodoni-book;
+            font-size: 18px;
+            padding: 20px 0;
+			display: flex;
+            a {
+                position: relative;
+                // padding-left: 23px;
+				
+                &:last-child {
+                    margin-left: 20px;
+                }
+				span {
+					img {
+						width: auto;
+						height: 16px;
+						margin-right: 10px;
+					}
+				}
+                // &:before {
+                //     content: url('../images/ornamentos.svg');
+                //     width: 16px;
+                //     height: 16px;
+                //     position: absolute;
+                //     left: 0;
+                //     top: 0;
+                // }
+            }
+        }
+
+	    &__extracto {
+			@extend %single-post-extracto-archivo;
+			@extend %contenido-wysiwyg-biografia;
+	    	margin-top: 20px;
+			margin-bottom: 10px;
+			@include under(mobile) {
+				margin-bottom: 40px;
+			}
+
+			&--primer-parrafo {
+
+			}
+
+			&--full {
+				display: none;
+			}
+
+	    }
+
+	    &__leer-mas {
+    		// margin-top: 15px;
+			margin-bottom: 50px;
+			@extend %link-leer-mas;
+			cursor: pointer;
+			display: inline-block;
+		}
+		&__leer-menos {
+    		// margin-top: 15px;
+			margin-bottom: 30px;
+			@extend %link-leer-mas;
+			cursor: pointer;
+			display: none;
+		}
+		&__detalles {
+			@extend %single-post-extracto-archivo;
+			margin-top: 20px;
+
+			.cursiva {
+				font-style: italic;
+			}
+		}
+	}
+
+
+    /* G a l e r i a */
+    .galeria {
+		width: 35%;
+		@include under(mobile) {
+			width: 100%;
+		}
+		&__contenedor {
+			width: 90%;
+			max-width: 375px;
+			@include under(mobile) {
+				margin: 20px auto 30px;
+				width: 100%;
+			}
+        }
+
+
+        .still {
+            &__container {
+                margin-top: 30px;
+            }
+
+            &__box {
+                @extend %box-aspect-ratio;
+                padding-bottom: 66.5%;
+            }
+
+            &__image {
+                @extend %imagen-aspect-ratio;
+                object-fit: contain;
+            }
+        }
+
+
+		&__video {
+            cursor: pointer;
+            width: 127px;
+            height: 35px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #ffbe2c;
+            border: none;
+            font-family: "OpenSans", sans;
+            font-size: 13px;
+            text-transform: uppercase;
+            color: #000000;
+            letter-spacing: 1px;
+            margin: 20px auto 0;
+            &:before {
+                content: url(../images/single-post/before-link.png);
+                margin-right: 5px;
+            }
+            &:hover {
+                background-color: #737a7c;
+            }
+		}
+
+		&__slider {
+
+			&--box {
+
+			}
+
+			&--credito {
+				@extend %single-post-credito-galeria;
+			}
+		}
+
+		.box__aspect {
+			@extend %box-aspect-ratio;
+			padding-bottom: 112%;
+			&--imagen {
+                @extend %imagen-aspect-ratio;
+                object-fit: contain;
+			}
+		}
+
+		ul.slick-dots {
+		    display: flex !important;
+		    justify-content: center;
+
+		    li {
+		    	button {
+		    		margin: 10px;
+		    		color: red;
+		    		font-size: 0;
+		    		width: 10px;
+		    		height: 10px;
+		    		padding: 0;
+		    		border: .5px solid black;
+		    		border-radius: 10px;
+		    		background: transparent;
+		    	}
+		    }
+		}
+		.slick-active {
+			button {
+	    		border: .5px solid c(yellow) !important;
+	    		background: c(yellow) !important;
+	    	}
+		}
+		.slick-initialized .slick-slide {
+			outline: none;
+		}
+	}
+
+	/* E n l a c e s */
+	.enlaces {
+
+		@include under(mobile) {
+			width: 100%;
+			margin: 0 auto;
+		}
+
+		&__contenedor {
+			width: 90%;
+			max-width: 570px;
+			margin: 0 auto;
+		}
+
+		.descargas {
+			display: flex;
+			margin-bottom: 60px;
+			@include under(mobile) {
+				margin-bottom: 30px;
+			}
+
+			&__col {
+				@include under(mobile) {
+					width: 50%;
+				}
+			}
+
+			.boton {
+				@extend %boton-descarga-single;
+				margin-right: 60px;
+				@include under(mobile) {
+					margin-right: 26%;
+				}
+
+				@include under(xs) {
+					//margin-right: 16%;
+					margin-right: 15px;
+				}
+
+				&:before {
+					content: url('../images/single-post/before-link.png');
+					margin-right: 5px;
+				}
+			}
+		}
+
+		.detalles {
+			display: flex;
+
+			&__fecha {
+				width: 50%;
+				max-width: 190px;
+				@include under(mobile) {
+					max-width: 100%;
+				}
+			}
+
+			&__tipo {
+				width: 50%;
+			}
+
+			&__box {
+				margin-bottom: 20px;
+			}
+
+			&__titulo {
+				@extend %single-post-titulo-detalles;
+			}
+
+			&__contenido {
+				@extend %single-post-contenido-detalles;
+				@extend %contenido-wysiwyg-biografia;
+				margin-bottom: 10px;
+			}
+		}
+	}
+}
+
+.slick-arrow {
+	width: 20px;
+	height: 35px;
+	position: absolute;
+	background-repeat: no-repeat;
+	top: 50%;
+	background-color: transparent;
+	cursor: pointer;
+}
+
+.galeria-prev {
+	background-image: url(../images/prev-slide.svg) !important;
+	left: 3%;
+	@include under(mobile) {
+		left: 2%;
+	}
+}
+
+.galeria-next {
+	background-image: url(../images/next-slide.svg) !important;
+	left: 96%;
+	@include under(mobile) {
+		left: 94%;
+	}
+}
+
+.breadcrumbs {
+    &__container {
+        width: 100%;
+        @extend %opensans-regular;
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        line-height: 15px;
+
+        margin: 30px 0 25px 0;
+    }
+}
+
+.single-post {
+    .breadcrumbs__container {
+        margin-left: 2%;
+        @include under(sm) {
+            margin-bottom: 0px;
+        }
+    }
+    .contenido__extracto {
+        p {
+            font-family: f(bodoni);
+            strong {
+                font-family: f(bodoni);
+                font-weight: bold;
+            }
+        }
+    }
+}
+.archive__container {
+    .breadcrumbs {
+        &__container {
+            width: 100%;
+
+            margin: 30px 0 0 25px;
+        }
+    }
+}

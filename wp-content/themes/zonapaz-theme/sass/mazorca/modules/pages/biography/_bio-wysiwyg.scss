@@ -1,0 +1,150 @@
+$col-1: 100%/12;
+.bio-wysiwyg {
+	background-color: c(gray-light);
+	padding: 70px 0px 50px;
+	@include under(lg) {
+		padding: 60px 20px 40px;
+	}
+
+	&.cronologia {
+		background-color: #fff !important;
+	}
+
+	&__contenedor {
+		width: 100%;
+		max-width: 1200px;
+		margin: 0 auto;
+
+		&.cronologia__contenedor {
+			max-width: 768px;
+		}
+
+		.contenido {
+
+			&__boton {
+				@extend %boton-anos-biografia;
+				max-width: 300px;
+				justify-content: center;
+				margin-bottom: 70px;
+
+				&--contenedor {
+					max-width: 1000px;
+					margin: 0 auto;
+				}
+			}
+
+			&__titulo {
+				@extend %biografia-titulo;
+				margin-left: $col-1;
+
+				&.cronologia__titulo {
+					margin-left: 0px;
+					margin-bottom: 25px;
+				}
+
+				&::before {
+					content: "~";
+				}
+			}
+
+			&__wysiwyg {
+				@extend %contenido-bio-wysiwyg;
+				@extend %contenido-wysiwyg-biografia;
+				max-width: 800px;
+				margin: 0 auto;
+
+				@extend %contenido-wysiwyg-biografia;
+
+				.single-post__full-super {
+
+					strong {
+						font-size: 74%;
+						vertical-align: super;
+						color: #FFBE2C;
+						font-weight: normal;
+						border: 0;
+						text-decoration: none;
+					}
+				}
+
+				&.footnote-cronologia{
+					font-size: 20px;
+					font-family: f(bodoni);
+
+					strong {
+						font-family: f(bodoni);
+						font-weight: bold;
+					}
+					
+					h3 {
+						font-family: f(opensans);
+
+						strong {
+							font-family: f(opensans);
+						}
+					}
+
+					blockquote {
+						
+						p {
+							font-size: 20px;
+							font-family: f(bodoni);
+						}
+					}
+
+					a {
+						text-decoration: underline;
+						text-decoration-color: c(yellow);
+					}
+				}
+			}
+		}
+	}
+
+	.contenido-to-top {
+		width: 30px;
+		height: 30px;
+		border-radius: 15px;
+		background: c(yellow);
+		position: absolute;
+	    display: flex;
+	    justify-content: center;
+	    align-items: center;
+	    color: white;
+	    font-size: 20px;
+	    font-weight: bold;
+
+        position: fixed;
+        top: 92vh;
+        right: 10%;
+        cursor: pointer;
+	}
+
+	.contenido__footnote--contenedor {
+		width: 100%;
+		max-width: 800px;
+		margin: 40px auto 10px;;
+	}
+
+	.contenido__footnote {
+		color: #737A7C;
+		font-size: 14px;
+		line-height: 18px;
+	}
+	.contenido__footnote p {
+		padding-bottom: 15px;
+	}
+	.contenido__footnote p a span {
+		color: #737A7C !important;
+	}
+	.contenido__footnote p:hover a span {
+		color: #FFBE2C !important; 
+	}
+	.contenido__footnote a {
+		text-decoration: none; 
+	}
+}
+
+em {
+	font-style: italic;
+}

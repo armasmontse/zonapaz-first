@@ -1,0 +1,88 @@
+%label {
+}
+
+/* M e n ú */
+%label-menu-item, .label-menu-item {
+	font-family: f(opensans);
+	font-size: 14px;
+	letter-spacing: 1px;
+	color: c(dark);
+	text-transform: uppercase;
+	cursor: pointer;
+
+
+	/*&.icono-lupa {
+		&:before {
+			content: "";
+	        display: block;
+	        background: url("../images/down.svg") no-repeat;
+	        width: 20px;
+	        height: 20px;
+	        margin: 8px auto 0;
+		}
+	}*/
+
+	/*&.dropdown {
+		&:before {
+			content: "";
+	        display: block;
+	        background: url("../images/down.svg") no-repeat;
+	        width: 20px;
+	        height: 20px;
+	        margin: 8px auto 0;
+		}
+	}*/
+
+}
+
+
+/* H o m e */
+%creditos-banner-home {
+	font-family: f(opensans);
+	font-size: 11px;
+	color: c(white);
+}
+
+%temas-titulo {
+	@extend %opensans-bold;
+	font-size: 20px;
+	line-height: 29px;
+}
+
+%temas-extractos {
+	@extend %bodoni-book;
+	font-size: 20px;
+	line-height: 24px;
+}
+
+%temas-link-mas {
+	@extend %bodoni-book;
+	font-size: 20px;
+	line-height: 24px;
+}
+
+/* A b o u t */
+%creditos-banner-about {
+	font-family: f(opensans);
+	font-size: 11px;
+	color: c(gray-dark);
+	text-align: right;
+	margin-top: 10px;
+	margin-right: 100px;
+}
+
+/* -- f o r m u l a r i o */
+%label-checkbox {
+	font-family: f(opensans);
+	font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* C a t e g o r i a */
+%label-orden-filtros {
+	font-family: f(opensans);
+	text-transform: uppercase;
+	font-size: 13px;
+	line-height: 16px;
+}

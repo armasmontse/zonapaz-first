@@ -1,0 +1,19 @@
+$col-1: 100%/12;
+/* _____ Arbol Genealógico _____ */
+
+.arbol-op {
+	background-color: c(gray-light);
+	@include under(sm) {
+		padding-top: 50px;
+	}
+
+	&__contenedor {
+		max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+	}
+
+	&__image {
+
+	}
+}

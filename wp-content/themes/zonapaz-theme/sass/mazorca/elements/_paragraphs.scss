@@ -1,0 +1,392 @@
+%paragraph {
+
+}
+
+/* *** T E X T O S *** */
+
+%bodoni-book {
+	font-family: f(bodoni);
+}
+
+%bodoni-italic {
+	font-family: f(bodoni);
+	font-style: italic;
+}
+
+/*%regular {
+	font-family: f(opensans);
+	font-weight: normal;
+	font-style: normal;
+}*/
+
+%opensans-regular {
+	font-family: f(opensans);
+	font-weight: normal;
+	font-style: normal;
+}
+
+%opensans-bold {
+	font-family: f(opensans);
+	font-weight: bold;
+}
+
+%opensans-bold-italic {
+	font-family: f(opensans);
+	font-weight: bold;
+	font-style: italic;
+}
+
+/* B o t o n e s */
+%text-boton {
+	font-family: f(opensans);
+	font-size: 13px;
+	text-transform: uppercase;
+	color: c(black);
+	letter-spacing: 1px;
+}
+
+/* C i t a s   f o o t e r */
+%cita-footer-frase, .cita-footer-frase {
+	font-family: f(opensans);
+	font-size: 13px;
+	line-height: 22px;
+	color: c(gray-dark);
+
+	margin-bottom: 25px;
+}
+
+%cita-footer-nombre, .cita-footer-nombre {
+	@extend %opensans-bold;
+	font-size: 13px;
+	line-height: 22px;
+	color: c(gray-dark);
+}
+
+%cita-footer-fecha, .cita-footer-fecha {
+	font-family: f(opensans);
+	font-size: 11px;
+	color: c(gray-dark);
+}
+
+/* F o o t e r */
+%label-footer-item, .label-footer-item {
+	@extend %opensans-bold;
+	font-size: 11px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+}
+
+%label-footer-legales, .label-footer-legales {
+	font-family: f(opensans);
+	font-size: 11px;
+	letter-spacing: .4px;
+	&:hover {
+		color: c(yellow);
+		cursor: pointer;
+	}
+
+	// &.separacion {
+		&:before {
+			content: "|";
+			margin: 0 5px 0 5px;
+			&:first-child {
+				display: none;
+			}
+		}
+
+		&:first-child {
+			&:before {
+				display: none;
+			}
+		}
+	// }
+
+    &:hover {
+		color: c(yellow);
+        cursor: pointer;
+        // &.separacion {
+            &:before {
+                color: black;
+            }
+        // }
+        &:last-child {
+            cursor: auto;
+            color: black;
+        }
+	}
+}
+
+
+/* H o m e */
+%titulo-home-descripcion {
+	font-family: f(opensans);
+	font-size: 17px;
+	line-height: 29px;
+	color: c(gray-dark);
+}
+
+/* A b o u t */
+%extracto-about {
+	@extend %bodoni-book;
+	font-size: 40px;
+	line-height: 60px;
+	color: c(black);
+	@include under(sm) {
+		font-size: 31px;
+		line-height: 48px;
+	}
+	@include under(mobile) {
+		font-size: 22px;
+		line-height: 36px;
+	}
+}
+
+%contenido-about {
+	font-family: f(opensans);
+	font-size: 17px;
+	line-height: 26px;
+	color: c(gray-dark);
+	@include under(sm) {
+		font-size: 15px;
+		line-height: 22px;
+	}
+}
+
+%total-archivos {
+	@extend %opensans-bold;
+	font-size: 40px;
+	@include under(sm) {
+		font-size: 30px;
+	}
+	@include under(mobile) {
+		font-size: 22px;
+	}
+}
+
+%total-archivos-texto {
+	font-family: f(opensans);
+	font-size: 40px;
+	text-transform: uppercase;
+	@include under(sm) {
+		font-size: 30px;
+	}
+	@include under(mobile) {
+		font-size: 22px;
+	}
+}
+
+%espacio-about-titulo {
+	@extend %opensans-bold;
+	font-size: 18px;
+	line-height: 21px;
+	color: c(black);
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+%espacio-about-totales {
+	@extend %opensans-bold;
+	font-size: 14px;
+	line-height: 16px;
+	color: c(yellow);
+	text-transform: uppercase;
+}
+
+%espacio-about-contenido {
+	font-family: f(opensans);
+	font-size: 15px;
+	line-height: 22px;
+	color: c(clack);
+}
+
+/* F o r m u l a r i o   a b o u t */
+%placeholder-formulario {
+	font-family: f(opensans);
+	font-size: 13px;
+	line-height: 15px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	&:placeholder {
+		font-family: f(opensans);
+		font-size: 13px;
+		line-height: 15px;
+		letter-spacing: 1px;
+		color: c(black);
+	}
+}
+
+/* S i n g l e   p o s t */
+%medio-single-titulo {
+	font-family: f(opensans);
+	font-weight: normal;
+	font-style: normal;
+	font-size: 10px;
+	text-transform: uppercase;
+}
+
+%single-post-credito-archivo {
+	@extend %opensans-bold;
+	font-size: 13px;
+	line-height: 29px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	color: c(gray-dark);
+}
+
+%single-post-extracto-archivo {
+	@extend %bodoni-book ;
+	font-size: 20px;
+	line-height: 26px;
+
+	@extend %contenido-wysiwyg;
+}
+
+%single-post-credito-galeria {
+	font-family: f(opensans);
+	font-weight: normal;
+	font-style: normal;
+	font-size: 11px;
+	line-height: 13px;
+	color: c(gray-dark);
+}
+
+%single-post-relacionados {
+	font-family: f(opensans);
+	font-weight: normal;
+	font-style: normal;
+	color: c(gray-dark);
+	font-size: 18px;
+	line-height: 29px;
+	&:hover {
+		cursor: pointer;
+	}
+
+	@include under(sm) {
+		font-size: 14px;
+		line-height: 17px;
+	}
+}
+
+/* M e d i o s   a r c h i v e */
+%banner-medios-descripcion {
+	font-family: f(opensans);
+	font-size: 17px;
+	line-height: 29px;
+}
+
+%titulo-espacio-filtros {
+	font-family: f(opensans);
+	font-size: 10px;
+	line-height: 12px;
+	text-transform: uppercase;
+	color: c(black);
+	letter-spacing: 1px;
+}
+
+%listado-filtro-nombre {
+	font-family: f(opensans);
+	font-weight: bold;
+	font-size: 18px;
+	line-height: 20px;
+	color: c(gray-dark);
+}
+
+%listado-filtro-tipo {
+	font-family: f(opensans);
+	font-size: 14px;
+	line-height: 16px;
+	text-transform: uppercase;
+	color: c(gray-dark);
+}
+
+%listado-filtro-fecha {
+	@extend %listado-filtro-tipo;
+}
+
+%label-titulo-filtros-categoria {
+	@extend %opensans-bold;
+	font-size: 19px;
+	line-height: 29px;
+	text-transform: uppercase;
+	letter-spacing: .5px;
+}
+
+%label-titulo-tipo-filtro-categoria {
+	@extend %opensans-bold;
+	font-size: 15px;
+	line-height: 29px;
+	text-transform: uppercase;
+	letter-spacing: .5px;
+}
+
+%label-opcion-filtro-categoria {
+	@extend %bodoni-book;
+	font-size: 20px;
+	line-height: 30px;
+}
+
+%label-mas-filtro-categoria {
+	font-family: f(opensans);
+	font-size: 13px;
+	line-height: 16px;
+	text-transform: uppercase;
+	color: c(gray-dark);
+}
+
+/* B i o g r a f í a */
+%biografia-contenido-banner {
+	@extend %titulo-home-descripcion;
+	color: c(black);
+}
+
+%creditos-contenido-banner {
+	@extend %single-post-credito-galeria;
+	color: c(white);
+}
+
+%contenido-bio-wysiwyg {
+	@extend %opensans-regular;
+	font-size: 17px;
+	line-height: 29px;
+	color: c(black);
+	letter-spacing: .3px;
+	@include under(mobile) {
+		font-size: 15px;
+		line-height: 24px;
+	}
+
+	h2 {
+		@extend %opensans-bold;
+		text-transform: uppercase;
+	}
+
+	h4 {
+		@extend %opensans-bold
+	}
+}
+
+%citas-bio-wysiwyg {
+	@extend %bodoni-book;
+	font-size: 22px;
+	line-height: 38px;
+	color: c(gray-dark);
+	@include under(mobile) {
+		font-size: 18px;
+		line-height: 33px;
+	}
+}
+
+%fuente-bio-wysiwyg {
+	@extend %opensans-regular;
+	font-size: 12px;
+	line-height: 29px;
+	letter-spacing: 1px;
+	&:before {
+		content: "";
+	    width: 35px;
+	    height: 0px;
+	    position: absolute;
+	    border: 1px solid c(gray-dark);
+		margin-top: 3px;
+	}
+}

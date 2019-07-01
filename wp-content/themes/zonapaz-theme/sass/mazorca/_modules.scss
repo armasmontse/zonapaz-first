@@ -1,0 +1,31 @@
+//_________________________ Modules _________________________ \\
+
+/* _____ G E N E R A L _____ */
+@import "modules/general/_header";
+@import "modules/general/_footer";
+@import "modules/general/_cita";
+@import "modules/general/_error";
+
+/* _____ P A G E S _____ */
+@import "modules/pages/_atomos";
+@import "modules/pages/_home";
+@import "modules/pages/_about";
+@import "modules/pages/_categoria";
+@import "modules/pages/_single-page-post";
+@import "modules/pages/_search";
+@import "modules/pages/_biography";
+@import "modules/pages/_archive";
+@import "modules/pages/_masonry";
+@import "modules/pages/_cronologia";
+@import "modules/pages/_equipo.scss";
+@import "modules/pages/_semblanza.scss";
+@import "modules/pages/_single-page-full";
+@import "modules/pages/_fototeca";
+
+/* _____ Cronología _____ */
+
+/* _____ H O M E _____ */
+@import "modules/pages/home/_intro-home";
+
+@import "modules/pages/_page";
+@import "modules/pages/_archivo-categoria";

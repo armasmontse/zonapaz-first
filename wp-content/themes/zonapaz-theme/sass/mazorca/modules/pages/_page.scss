@@ -1,0 +1,57 @@
+.page-template {
+    @include under(sm) {
+		padding-top: 25px;
+	}
+    &__container {
+        width: 65%;
+        min-width: 752px;
+        background: #e9eced;
+        @include under(sm) {
+            width: 100%;
+            min-width: 100%;
+        }
+
+    }
+    .grid__col-1-1 {
+        @include under(sm) {
+            padding: 0px;
+        }
+    }    
+    &__content {
+        height: 100%;
+        max-width: 730px;
+        margin-left: calc(8.33333% * 2);
+        margin-right: 80px;
+        display: flex;
+        flex-direction: column;
+        @extend %opensans-regular;
+        font-size: 17px;
+        line-height: 29px;
+        padding: 95px 0;
+        color: #737a7c;
+        @include under(sm) {
+            padding: 95px 20px;
+            max-width: 100%;
+            margin-left: 0;
+            margin-right: 0
+        }
+        .titulo {
+            @extend %opensans-bold;
+            font-size: 35px;
+            line-height: 42px;
+            padding-bottom: 40px;
+            color: #000;
+        }
+        .contenido {
+            p {
+                padding-bottom: 30px;
+            }
+            p strong {
+                @extend %opensans-bold;
+            }
+            p em {
+                font-style: italic;
+            }
+        }
+    }
+}

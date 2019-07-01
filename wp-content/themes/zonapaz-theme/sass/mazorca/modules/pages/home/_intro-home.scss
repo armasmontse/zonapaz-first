@@ -1,0 +1,252 @@
+$col-1: 100%/12;
+/*width: calc(#{$col-1} * 8);*/
+
+/* I n t r o */
+.intro-home {
+	background: c(yellow-light);
+
+	.grid__container--fluid {
+		display: flex;
+		@include under(mobile) {
+            flex-wrap: wrap;
+            flex-direction: column-reverse;
+		}
+	}
+
+	.franja-gris {
+		width: 60%;
+		background: c(gray-light);
+		@include under(mobile) {
+			width: 100%;
+		}
+		&__contenedor {
+			height: 100%;
+		    max-width: 730px;
+		    margin-left: calc(#{$col-1} * 2);
+		    margin-right: 80px;
+		    display: flex;
+		    flex-direction: column;
+		    float: right;
+		    @include under(sm) {
+		    	margin-left: calc(#{$col-1} * .8);
+		    	margin-right: calc(#{$col-1} * .8);
+		    }
+		    @include under(mobile) {
+		    	margin: 0 30px;
+		    }
+		    @include under(xs) {
+				padding: 0 20px;
+				margin: 0;
+				max-width: 100%;
+		    }
+		}
+
+		.titulo {
+			@extend %titulo-home-intro;
+			margin: 70px 0;
+			@include under(sm) {
+		    	margin: 50px 0;
+		    }
+		    @include under(sm) {
+		    	margin: 40px 0;
+		    }
+
+			&--amarillo {
+				color: c(yellow);
+			}
+		}
+
+		.descripcion {
+			@extend %titulo-home-descripcion;
+			@extend %contenido-wysiwyg-biografia;
+			margin-bottom: 70px;
+			@include under(mobile) {
+				margin-bottom: 40px;
+			}
+		}
+
+		.foto {
+			margin-bottom: 80px;
+			@include under(sm) {
+				margin-bottom: 70px;
+			}
+			@include under(mobile) {
+				margin-bottom: 40px;
+			}
+
+			&__box{
+
+				&--aspect {
+					@extend %box-aspect-ratio;
+					padding-bottom: 66%;
+					margin-bottom: 5px;
+				}
+
+				&--imagen {
+					@extend %imagen-aspect-ratio;
+				}
+			}
+
+			&__creditos {
+				font-family: f(opensans);
+				font-size: 11px;
+				line-height: 13px;
+				color: c(gray-dark);
+			}
+		}
+
+		.destacados {
+
+			&__titulo {
+				@extend %label-orden-filtros;
+				border-bottom: 2px solid black;
+				padding-bottom: 5px;
+                margin-bottom: 40px;
+                letter-spacing: 1px;
+			}
+
+			&__box {
+                margin-bottom: 30px;
+                display: block;
+                &:hover {
+                    .destacados__nombre {
+                        text-decoration: underline;
+                        text-decoration-color: c(yellow);
+                    }
+                }
+			}
+
+			&__nombre {
+                @extend %destacados-nombre-home;
+                letter-spacing: .5px;
+                position: relative;
+				padding-left: 30px;
+				@include under(mobile) {
+					padding-left: 22px;
+				}
+                &:before {
+                    position: absolute;
+                    content: '~';
+                    top: 0;
+                    left: 0;
+                }
+
+				.italic {
+					font-style: italic;
+				}
+			}
+
+			&__autor {
+				@extend %destacados-autor-home;
+                margin-left: 30px;
+                letter-spacing: 0.5px;
+				@include under(mobile) {
+					margin-left: 22px;
+				}
+				.italic {
+					font-style: italic;
+				}
+			}
+		}
+	}
+
+	.franja-amarilla {
+		width: 40%;
+		@include under(mobile) {
+			width: 100%;
+		}
+
+		&__contenedor {
+			height: 100%;
+		    width: 100%;
+		    display: flex;
+		    justify-content: flex-start;
+		    align-items: flex-end;
+		    flex-direction: column;
+		    @include under(sm) {
+		    	justify-content: flex-start;
+		    	align-items: flex-start;
+		    }
+		}
+
+		/* T e m a s */
+		.temas {
+			width: 100%;
+			padding: 40px 20px;
+			@include over(lg) {
+				max-width: 400px;
+			}
+			@include under(sm) {
+				padding: 25px 20px;
+			}
+
+			&__espacio {
+				font-family: f(opensans);
+				font-size: 13px;
+				line-height: 16px;
+				text-transform: uppercase;
+				color: c(black);
+                margin-bottom: 10px;
+                letter-spacing: 1px;
+			}
+
+			&__titulo {
+				@extend %temas-titulo;
+                //margin-bottom: 20px;
+                margin-bottom: 12px;
+			}
+
+			&__extracto {
+				@extend %temas-extractos;
+				margin-bottom: 20px;
+				@include under(sm) {
+					/*overflow: hidden;
+				    display: -webkit-box;
+				    -webkit-line-clamp: 3;
+				    -webkit-box-orient: vertical;
+				    text-overflow: ellipsis;*/
+
+					text-overflow: ellipsis;
+					overflow: hidden;
+					width: 160px;
+					height: 1.2em;
+					white-space: nowrap;
+				}
+				@include under(mobile) {
+					width: 100%;
+				}
+			}
+
+			&__link {
+                @extend %temas-link-mas;
+                @extend %opensans-bold;
+                font-size: 13px;
+                letter-spacing: .6px;
+            }
+
+            &__autor {
+                @extend %temas-link-mas;
+                @extend %opensans-bold;
+                font-size: 15px;
+                text-transform: uppercase;
+                padding: 0 0 17px;
+                letter-spacing: .6px;
+            }
+
+			&__hover {
+				width: 100%;
+				/*height: 100%;*/
+				&:hover {
+					background: c(yellow);
+					cursor: pointer;
+				}
+			}
+		}
+	}
+}
+
+.boton_mobile {
+    @include under(mobile) {
+        height: 50px;
+    }
+}

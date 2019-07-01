@@ -1,0 +1,11 @@
+$col-1: 100%/12;
+/*width: calc(#{$col-1} * 8);*/
+
+.categoria {
+
+}
+
+/* _____ C A T E G O R I A _____ */
+@import "categoria/_banner-medios";
+@import "categoria/_header-filtros";
+@import "categoria/_lista-filtros";

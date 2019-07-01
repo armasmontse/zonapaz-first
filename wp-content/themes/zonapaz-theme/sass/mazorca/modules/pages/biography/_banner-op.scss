@@ -1,0 +1,244 @@
+.banner-op {
+	width: 100%;
+	background-color: c(yellow);
+	height: auto;
+	@include under(sm) {
+		padding-top: 50px;
+	}
+
+	&__contenedor {
+		max-width: 1200px;
+		display: flex;
+		margin: 0 auto;
+		@include under(mobile) {
+			flex-direction: column-reverse;
+		}
+
+		.contenido {
+			width: 60%;
+			/*max-width: 600px;*/
+			margin-left: $col-1;
+			margin-right: $col-1;
+			margin-top: 70px;
+			margin-bottom: 70px;
+			@include under(md-850) {
+				margin: 60px 20px;
+			}
+			@include under(mobile) {
+				width: 94%;
+				margin: 20px;
+			}
+
+			&__titulo {
+				@extend %biografia-titulo;
+			}
+
+			&__wysiwyg {
+				@extend %biografia-contenido-banner;
+				@extend %contenido-wysiwyg-biografia;
+			}
+		}
+
+		.galeria {
+			width: 40%;
+
+			&.genealogico{
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+			}
+
+			@include under(md) {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+			}
+			@include under(mobile) {
+				width: 100%;
+			}
+
+			.box-aspect {
+				@extend %box-aspect-ratio;
+				padding-bottom: 91%;
+				@include under(md) {
+					padding-bottom: 112%;
+				}
+				@include under(md-850) {
+					padding-bottom: 145%;
+				}
+				@include under(mobile) {
+					padding-bottom: 50%;
+				}
+
+				&--imagen {
+					@extend %imagen-aspect-ratio;
+				}
+
+				&.genealogico{
+					padding-bottom: 110%;
+					@include under(md) {
+						padding-bottom: 140%;
+					}
+					@include under(md-850) {
+						padding-bottom: 180%;
+					}
+					@include under(mobile) {
+						padding-bottom: 50%;
+					}
+				}
+			}
+			.creditos {
+				width: 100%;
+				background: rgba(0, 0, 0, 0.4);
+                // height: 25px;
+                min-height: 25px;
+				position: relative;
+				top: -35px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				@extend %creditos-contenido-banner;
+                font-size: 11px;
+                color: #fff;
+                line-height: 15px;
+                color: #fff;
+                padding: 10px 20px;
+				text-align: center;
+				
+				em {
+					font-style: italic;
+				}
+
+				&.genealogico{
+					position: absolute;
+					top: inherit;
+					bottom: 0;
+				}
+			}
+
+			.boton {
+				@extend %boton-anos-biografia;
+				@include under(mobile) {
+				    width: 250px;
+				    float: right;
+					right: 0;
+					z-index: 99;
+				}
+
+				&:hover {
+					cursor: pointer;
+				}
+
+				&--menu {
+					@include under(mobile) {
+                        margin-left: 10px;
+					}
+
+					&.show {
+                        margin-left: 40px;
+                        letter-spacing: 1px;
+                        width: 100%;
+                        text-align: left;
+
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        position: relative;
+                        height: 100%;
+
+                        @include under(mobile) {
+                            margin-left: 0px;
+                            text-align: right;
+                            padding-right: 20px;
+                        }
+
+						&::before {
+					    	content: url(../images/before-black.svg);
+					    	position: absolute;
+					        width: 10px;
+					        transform: rotate(180deg);
+					        margin-left: -20px;
+                            margin-top: -2px;
+                            top: 16px;
+                            left: 0px;
+					        @include under(sm) {
+								left: 33px;
+							}
+					    }
+					}
+
+					&.close {
+						display: none;
+						font-size: 14px;
+					    position: initial;
+					    color: black;
+					    margin-top: 16px;
+                        margin-left: 40px;
+                        width: 100%;
+                        text-align: left;
+                        letter-spacing: 1px;
+
+                        margin-top: 0px;
+                        flex-direction: column;
+                        justify-content: center;
+                        position: relative;
+                        height: 100%;
+
+					    @include under(mobile) {
+                            margin-left: 0px;
+                            text-align: right;
+                            padding-right: 20px;
+						}
+						&::before {
+					    	content: url(../images/before-black.svg);
+					    	position: absolute;
+					        width: 10px;
+					        margin-left: -20px;
+                            margin-top: -2px;
+                            top: 18px;
+							left: 0px;
+							@include under(sm) {
+								left: 33px;
+							}
+					    }
+					}
+				}
+			}
+
+			.submenu-hover {
+				display: none;
+				background: #FFD278;
+			    height: auto;
+			    position: absolute;
+			    width: 100%;
+                top: 50px;
+
+                // box-shadow: 10px 5px 37px #a7a7a7;
+                box-shadow: 0px 3px 13px 1px rgba(194,194,194,1);
+			    @include under(mobile) {
+					background-color: white;
+				}
+
+			    ul {
+                    width: 100%;
+			    	li {
+						@extend %link-boton-biografia;
+						padding: 15px 10px;
+						@include under(mobile) {
+							padding: 15px 20px;
+						}
+
+						&:hover,
+						&:active {
+							@include under(mobile) {
+								background-color: c(white);
+								color: c(yellow);
+							}
+						}
+			    	}
+			    }
+			}
+		}
+	}
+}

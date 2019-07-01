@@ -1,0 +1,473 @@
+* { box-sizing: border-box; }
+
+html { overflow-y: scroll; }
+.masonry {
+    .search__table {
+        display: initial;
+        border: 0;
+
+        p,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        ol,
+        ul,
+        h6,
+        hr,
+        blockquote {
+            display: none;
+        }
+
+        p img {
+            display: block;
+        }
+
+        a h3 {
+            display: block;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+        .search__table-type {
+            padding-left: 0;
+            padding-right: 15px;
+            position: relative;
+            &:after {
+                content: '|';
+                position: absolute;
+                right: 3px;
+                top: -1px;
+
+            }
+        }
+        .hide-list {
+            display: none;
+        }
+    }
+
+    .search__table-cards {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        margin-bottom: 8px;
+        margin-top: 20px;
+        .search__table-type,
+        .search__table-date {
+            width: auto;
+            &.autor {
+                display: block;
+                font-weight: bold;
+                width: 100%;
+            }
+        }
+        .search__table-date {
+            padding-right: 10px;
+        }
+    }
+
+    .search__table-title {
+        padding-bottom: 40px;
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        @include under(xs) {
+            padding: 0;
+        }
+    }
+
+    &__container{
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    &-sizer,
+    &-item {
+        width: calc(100% / 5);
+        @include under(md) {
+            width: calc(100% / 3);
+        }
+        @include under(sm) {
+            width: calc(100% / 2);
+        }
+        @include under(xs) {
+            width: 100%;
+        }
+    }
+
+    &-item {
+        padding: 0 10px;
+        cursor: pointer;
+        position: relative;
+        // background-color: whitesmoke;
+        // border: 2px solid #000;
+        @include under(sm) {
+            padding: 10px 10px;
+        }
+        @include under(mobile) {
+            padding: 10px 7.5px;
+            padding-bottom: 20px;
+        }
+        @include under(xs) {
+            padding: 10px 0;
+        }
+    }
+
+    &.list {
+        height: auto !important;
+        .masonry-item {
+            width: 100%;
+            position: initial !important;
+            padding: 10px;
+        }
+        .search__table {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+
+            border-bottom: 1px solid #dce1e2;
+            @include over(md-850) {
+                justify-content: inherit;
+            }
+            @include over(lg) {
+                justify-content: stretch;
+            }
+
+
+            p,
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            img,
+            ol,
+            ul,
+            h6,
+            hr,
+            blockquote {
+                display: none;
+            }
+
+            a h3 {
+                display: block;
+                padding: 0 10px;
+                @include under(md) {
+                    padding: 0;
+                }
+            }
+
+            a {
+                display: flex;
+            }
+        }
+        .view-cards {
+            display: none;
+        }
+        .hide-list {
+            display: block;
+        }
+        .search__table-cards {
+            width: 20%;
+            max-width: 176px;
+            @include under(md) {
+                width: 100%;
+                max-width: 100%;
+                padding-bottom: 5px;
+            }
+        }
+        .search__table-title {
+            width: calc(100% - 40%);
+            max-width: calc(100% - 552px);
+            padding: 0;
+            @include under(md) {
+                width: 100%;
+                max-width: 100%;
+            }
+        }
+        .search__table-date {
+            width: 20%;
+            max-width: 176px;
+            float: right;
+            @include under(md) {
+                width: 100%;
+                max-width: 100%;
+                padding-left: 0;
+                padding-top: 15px;
+            }
+
+            &.autor {
+                font-weight: bold;
+                padding: 0 10px;
+                padding-left: 0;
+            }
+        }
+
+        .masonry-image-vacio {
+            display: none;
+        }
+
+        .masonry-item a {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            @include over(md-850) {
+                justify-content: inherit;
+            }
+
+            @include over(lg) {
+                justify-content: stretch;
+            }
+            @include under(md) {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        .search__table .search__table-title h3 {
+            display: block;
+        }
+
+
+    }
+
+    &-image-vacio {
+        @extend %box-aspect-ratio;
+        padding-bottom: 78%;
+
+        div {
+            @extend %imagen-aspect-ratio;
+        }
+    }
+
+}
+
+.order-active {
+    svg {
+        width: 18px;
+        height: auto;
+        rect#_Rectángulo_,
+        rect#_Rectángulo_2,
+        rect#_Rectángulo_3,
+        rect#_Rectángulo_4 {
+            stroke: none;
+            fill: #ffbe2c;
+        }
+        line.cls-1 {
+            stroke: #ffbe2c;
+        }
+    }
+}
+
+.archive.post-type-archive {
+    .masonry-item.search__table {
+        &:hover {
+            .search__table-title.cards h3 {
+                color: black;
+            }
+        }
+    }
+
+    .masonry-item.search__table {
+        .autor {
+            width: 100%;
+            max-width: 100%;
+        }
+    }
+
+    .search__table-title.cards h3 {
+        display: none !important;
+    }
+    .masonry .search__table-title {
+        padding-bottom: 0px;
+    }
+    .masonry .search__table {
+        padding-bottom: 40px;
+    }
+
+
+    .masonry {
+        .search__table-date.autor {
+            padding-top: 10px;
+            float: left;
+        }
+        &.list {
+            .search__table {
+                padding-bottom: 20px;
+            }
+            .masonry-item.search__table {
+                .autor {
+                    width: 100%;
+                    max-width: 176px;
+                    @include under(md) {
+                        max-width: 100%;
+                    }
+                }
+            }
+            // .search__table-date.autor {
+            //     padding-top: 0;
+            // }
+        }
+    }
+
+}
+
+
+//B I B L I O G R A F I A
+
+.archive.post-type-archive.post-type-archive-bibliography {
+
+
+
+    .search__table-title {
+        display: none;
+    }
+    .search__table-title.cards {
+        display: block;
+        padding-bottom: 0px;
+    }
+    .masonry .search__table-date.autor {
+        padding-top: 10px;
+    }
+
+
+    .search__table-title.cards h3 {
+        display: block !important;
+        font-size: 14px;
+        line-height: 16px;
+        letter-spacing: 1px;
+        color: #737a7c;
+        text-transform: uppercase;
+        width: 100%;
+        font-weight: normal;
+        padding-bottom: 0;
+    }
+
+    .search__table-date.autor {
+        display: block;
+    }
+
+    .search__table-date.autor.hide-list {
+        display: none;
+    }
+    .search__table-type,
+    .search__table-date {
+        display: none;
+    }
+
+    .masonry.list {
+        .search__table-date.autor.hide-list {
+            display: block;
+        }
+
+        .search__table-title {
+            display: block;
+        }
+
+        .search__table-type,
+        .search__table-date {
+            display: block;
+        }
+
+        .search__table-date.autor.hide-list {
+            padding-top: 0px;
+            @include under(md) {
+                padding-top: 15px;
+            }
+        }
+    }
+}
+
+
+//M E D I O S
+.archive.post-type-archive.post-type-archive-media {
+
+    .masonry-item.search__table {
+        .autor {
+            .search__table-date.autor {
+                display: none;
+            }
+        }
+    }
+
+}
+
+.archive.post-type-archive.post-type-archive-conversation {
+    .search__table-title {
+        display: none;
+    }
+    .masonry.list .search__table-title {
+        display: block;
+    }
+    .search__table-title.cards {
+        display: block;
+
+        h3 {
+            display: block !important;
+            font-size: 14px;
+            line-height: 16px;
+            letter-spacing: 1px;
+            color: #737a7c;
+            text-transform: uppercase;
+            width: 100%;
+            font-weight: normal;
+            padding-bottom: 0;
+        }
+    }
+
+    .search__table-cards.view-cards {
+        .search__table-type,
+        .date {
+            display: none;
+        }
+    }
+
+
+}
+
+// page.page-id-47
+.page-template-default.page.page-id-47,
+.page-template-default.page.page-id-545 {
+    .search__table-cards.view-cards a.title .search__table-title.cards h3 {
+        display: none;
+    }
+    .title {
+        display: none;
+    }
+    .autor {
+        width: 100%;
+        padding-top: 15px;
+        .search__table-date.autor {
+            padding-top: 15px;
+        }
+    }
+    .masonry {
+        .search__table-date.autor {
+            padding-top: 15px;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            max-width: 100%;
+        }
+        .search__table-type {
+            width: auto;
+            max-width: 100%;
+        }
+
+        &.list {
+            .search__table-date.autor {
+                width: 20%;
+                max-width: 176px;
+                float: right;
+                @include under(md) {
+                    width: 100%;
+                    padding-top: 15px;
+                    max-width: 100%;
+                }
+            }
+        }
+    }
+}

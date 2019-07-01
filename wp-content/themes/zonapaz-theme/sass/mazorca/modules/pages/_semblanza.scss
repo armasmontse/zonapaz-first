@@ -1,0 +1,65 @@
+.semblanza {
+
+    @include under(sm) {
+        padding-top: 50px;
+        .grid__col-1-1 {
+            padding: 0;
+        }
+    }
+    &__container {
+        background-color: #F2F5F6;
+        padding-bottom: 20px;
+        .banner {
+            width: 100%;
+
+            .box {
+                &__aspect {
+                    @extend %box-aspect-ratio;
+                    padding-bottom: 33.334%;
+                }
+
+                &__imagen {
+                    @extend %imagen-aspect-ratio;
+                }
+            }
+
+            &__creditos {
+                @extend %creditos-banner-about;
+                width: 100%;
+                margin: 0;
+                padding-top: 10px;
+                padding-bottom: 7.5%;
+
+                em {
+                    font-style: italic;
+                }
+            }
+        }
+    }
+
+    &__content {
+        width: 100%;
+        max-width: 1009px;
+        padding: 0 20px;
+        margin: 0 auto;
+
+
+        .titulo {
+            @extend %extracto-about;
+            padding-bottom: 22px;
+        }
+
+        .contenido {
+            @extend %titulo-home-descripcion;
+            @extend %contenido-wysiwyg;
+            color: #000;
+            width: 100%;
+            max-width: 766px;
+            margin: 0 auto;
+            p {
+                padding-bottom: 30px;
+            }
+        }
+    }
+
+}

@@ -1,0 +1,109 @@
+$col-1: 100%/12;
+
+/* _____ Cronología _____ */
+.cronologia {
+
+	.lustros {
+		margin: 80px auto 150px;
+
+		&__contenedor {
+			width: 100%;
+			max-width: 570px;
+			margin: 0 auto;
+
+            @include over(sm) {
+                &:hover {
+                    cursor: pointer;
+
+                    .listado-hover {
+                        opacity: 1 !important;
+                    }
+                }
+            }
+		}
+
+		.boton {
+			width: 100%;
+			max-width: 570px;
+			background-color: c(yellow);
+			color: c(black);
+			border-bottom: 2px solid c(black);
+			@extend %opensans-bold;
+			font-size: 23px;
+			line-height: 28px;
+			position: relative;
+			margin: 0 auto;
+
+			&::after {
+				content: url("../images/arrow-bottom.svg");
+				position: absolute;
+				right: 0;
+				width: 20px;
+				height: 20px;
+			}
+
+			@include over(sm) {
+                &:hover {
+                    cursor: pointer;
+
+                    & ~ .listado-hover {
+                        opacity: 1 !important;
+                    }
+                }
+            }
+		}
+
+		.listado-hover {
+			opacity: 0;
+		    width: 100%;
+			max-width: 570px;
+			background-color: c(white);
+			margin: 0 auto;
+
+			ul {
+				&:hover {
+					opacity: 1;
+				}
+
+		    	li {
+					@extend %link-boton-crono;
+					// padding: 20px 30px;
+					// @include under(mobile) {
+					// 	padding: 15px 20px;
+					// }
+
+					&:hover,
+					&:active {
+						@include under(mobile) {
+							background-color: c(white);
+							color: c(yellow);
+						}
+					}
+
+					a {
+                        display: flex;
+                        padding: 20px 30px;
+                        @include under(mobile) {
+                            padding: 15px 20px;
+                        }
+					}
+		    	}
+            }
+            &.opacidad {
+                @include under(sm) {
+                    opacity: 1 !important;
+                    cursor: pointer;
+                }
+            }
+		}
+	}
+
+	/* S e a r c h */
+	&--none {
+		display: none;
+	}
+
+	&__col {
+		width: $col-1 * 12 !important;
+	}
+}

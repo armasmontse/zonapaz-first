@@ -1,0 +1,261 @@
+.about {
+	@include under(sm) {
+		padding-top: 50px;
+	}
+	/* B a n n e r */
+	.banner {
+		width: 100%;
+		.box {
+
+			&__aspect {
+				@extend %box-aspect-ratio;
+				padding-bottom: 34%;
+			}
+
+			&__imagen {
+				@extend %imagen-aspect-ratio;
+			}
+		}
+
+		&__creditos {
+			@extend %creditos-banner-about;
+			width: 100%;
+		}
+	}
+
+	/* Extracto */
+	.extracto {
+		@extend %extracto-about;
+		margin: 50px auto;
+		@include under(mobile) {
+			margin: 40px auto;
+		}
+		.grid__container {
+			@include under(mobile) {
+				max-width: 100%;
+				margin: 0 auto;
+				padding: 0 20px;
+			}
+
+		}
+
+		&__contenedor {
+			@extend %max-contenedor;
+			@extend %contenido-wysiwyg;
+			@include under(mobile) {
+				width: 100%;
+			}
+		}
+	}
+
+	/* C o n t e n i d o */
+	.contenido {
+		@extend %contenido-about;
+		margin: 0 auto 70px;
+		@include under(mobile) {
+			margin: 0 auto 40px;
+		}
+		.grid__container {
+			@include under(mobile) {
+				max-width: 100%;
+			}
+		}
+
+		&__contenedor {
+			@extend %max-contenedor;
+			@extend %contenido-wysiwyg-biografia;
+			column-count: 2;
+			column-gap: 30px;
+			@include under(mobile) {
+				column-count: 1;
+				padding: 0 20px;
+				width: 100%;
+			}
+		}
+	}
+
+	/* T o t a l   a r c h i v o s */
+	.total-archivos {
+		width: 100%;
+		background: c(yellow);
+		height: 170px;
+        margin-bottom: 90px;
+        display: flex;
+		@include under(mobile) {
+			margin-bottom: 40px;
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+		}
+
+		&__box {
+			width: 100%;
+			//height: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			letter-spacing: 2px;
+			flex-direction: row;
+			flex-wrap: wrap;
+		}
+
+		.numero {
+			@extend %total-archivos;
+			line-height: 32px;
+			margin-right: 20px;
+		}
+
+		.texto {
+			@extend %total-archivos-texto;
+		}
+	}
+
+	/* E s p a c i o s */
+	.espacios {
+
+		&__contenedor {
+			@extend %max-contenedor;
+			@include under(mobile) {
+				width: 100%;
+			}
+			.grid__container {
+				@include under(mobile) {
+					width: 100%;
+					max-width: 100%;
+				}
+			}
+		}
+
+		&__box {
+            a {
+                display: block;
+                cursor: pointer;
+                &:hover {
+                    .espacios__titulo {
+                        color: #ffbe2c;
+                    }
+                }
+            }
+		}
+
+		&__titulo {
+			@extend %espacio-about-titulo;
+			padding-bottom: 5px;
+			border-bottom: 3px solid c(dark);
+			margin-bottom: 10px;
+		}
+
+		&__totales {
+			@extend %espacio-about-totales;
+			margin-bottom: 20px;
+		}
+
+		&__descripcion {
+			@extend %espacio-about-contenido;
+			@extend %contenido-wysiwyg;
+			margin-bottom: 30px;
+		}
+	}
+
+	/* C o n t r i b u y e */
+	.contribuye {
+		width: 100%;
+		background: c(gray-light);
+
+		&__contenedor {
+			@extend %max-contenedor;
+			padding: 70px 0;
+			@include under(mobile) {
+				padding: 40px 0;
+			}
+		}
+
+		&__titulo {
+			@extend %about-contribuye-titulo;
+			width: 100%;
+
+			&.correo {
+				@include under(mobile) {
+					font-size: 26px;
+					line-height: 32px;
+				}
+			}
+			a {
+				text-decoration: underline;
+			}
+		}
+
+		.formulario {
+			margin: 60px 0 70px 0;
+			display: flex;
+			@include under(mobile) {
+				flex-wrap: wrap;
+			}
+
+			.col6 {
+				width: 50%;
+				margin: 0 10px;
+				@include under(mobile) {
+					width: 100%;
+					margin: 0;
+				}
+
+				&.between {
+					display: flex;
+				    flex-direction: column;
+				    justify-content: space-between;
+				}
+			}
+
+			.border {
+				border-bottom: 1px solid c(black);
+				margin-bottom: 20px;
+			}
+
+			.row {
+			    display: flex;
+			    margin-bottom: 10px;
+			    align-items: center;
+			}
+
+			.checkbox {
+                border: 1px solid c(black);
+                height: 15px;
+                width: 16px;
+
+				&__label {
+                    @extend %label-checkbox;
+                    padding-left: 6px;
+				}
+			}
+
+			.desktop {
+				display: block;
+				@include under(mobile) {
+					display: none;
+				}
+			}
+
+			.mobile {
+				display: none;
+				margin: 10px 0;
+				@include under(mobile) {
+					display: block;
+				}
+            }
+
+            .margBottom {
+                margin-bottom: 55px;
+                margin-top: 20px;
+            }
+		}
+    }
+
+    label.error {
+        font-family: "OpenSans", sans;
+        font-size: 13px;
+        color: c(red);
+        padding-bottom: 15px;
+        display: block;
+    }
+}

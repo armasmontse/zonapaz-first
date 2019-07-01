@@ -1,0 +1,18 @@
+.single-post {
+	/*background-color: aqua;*/
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 20px;
+	display: flex;
+	@include under(sm) {
+		padding-top: 50px;
+	}
+}
+
+/* _____ S I N G L E   P O S T _____ */
+@import "single-post/_archivo";
+@import "single-post/_paginador-post";
+@import "single-post/_relacionados";
+@import "single-post/_modal-galeria";
+@import "single-post/_modal-iframe";

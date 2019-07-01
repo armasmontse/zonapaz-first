@@ -1,0 +1,124 @@
+$col-1: 100%/12;
+
+.footer {
+	position: relative;
+
+	@include under(sm) {
+		padding-bottom: 40px;
+	}
+
+	&__contenedor {
+		@extend %max-contenedor;
+		padding: 10px 0 ;
+	}
+
+	.menu-footer-menu-container {
+		@extend %label-footer-item;
+		width: 100%;
+	}
+	.lista {
+		width: 100%;
+		display: flex;
+		justify-content: space-around;
+        flex-wrap: wrap;
+        @include under(xs) {
+            justify-content: center;
+        }
+
+		li {
+		    margin-bottom: 28px;
+
+		    @include under(md) {
+		        margin: 0px 10px 10px;
+		    }
+
+		    @include under(mobile) {
+		        margin: 0px 5px 10px;
+		        width: 100%;
+		        text-align: center;
+		    }
+
+		    &:hover {
+		        color: c(yellow);
+		        cursor: pointer;
+		    }
+
+		    @include under(mobile) {
+		        &:hover {
+		            color: c(yellow);
+		            cursor: pointer;
+
+		        }
+		    }
+		}
+	}
+
+	.legales {
+		&__lista {
+			width: 50%;
+			margin: 0 auto;
+			@include under(md) {
+				width: 80%;
+			}
+			@include under(mobile) {
+				width: 100%;
+                flex-wrap: wrap;
+                margin-top: 10px;
+			}
+		}
+
+		&__item {
+			@extend %label-footer-legales;
+			@include under(mobile) {
+                margin-bottom: 10px;
+                width: 100%;
+                text-align: center;
+
+            }
+
+            &:before,
+            &:after {
+                @include under(mobile) {
+                    display: none;
+                }
+            }
+		}
+	}
+
+	.logos {
+		width: 150px;
+		height: 30px;
+		right: 0;
+		position: absolute;
+		display: flex;
+		align-items: center;
+		bottom: 2px;
+	
+		@include under(md-980) {
+			width: 90px;
+		}
+		
+		@include under(sm) {
+			right: 40%;
+			margin-top: 35px;
+		}
+	
+		@include under(mobile) {
+			margin-top: 85px;
+		}
+
+		a {
+			width: 37px;
+			height: 25px;
+		}
+		
+		&__svg {
+			width: 30px;
+			margin-right: 6px;
+			height: 25px;
+			object-fit: contain;
+
+			// background-color: red;
+		}
+	}
+}

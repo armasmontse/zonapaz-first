@@ -1,0 +1,28 @@
+/* C i t a   f o o t e r */
+.cita {
+	width: 85%;
+	max-width: 570px;
+	padding: 40px 0 55px;
+	margin: 0 auto;
+	text-align: center;
+	@include under(mobile){
+		padding: 40px 0 40px;
+	}
+	
+	&__contenedor {
+
+	}
+
+	/* C o n t e n i d o */
+	&__contenido {
+		@extend %cita-footer-frase;
+	}
+
+	&__nombre {
+		@extend %cita-footer-nombre;
+	}
+
+	&__fecha {
+		@extend %cita-footer-fecha;
+	}
+}

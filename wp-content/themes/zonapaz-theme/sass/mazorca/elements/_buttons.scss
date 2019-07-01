@@ -1,0 +1,33 @@
+%button {
+	@extend %text-boton;
+    width: 127px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	background-color: c(yellow);
+	border: none;
+	&:hover {
+		background-color: c(gray-dark);
+		cursor: pointer;
+	}
+}
+
+%boton-descarga-single {
+	@extend %button;
+}
+
+/* B i o g r a f í a */
+%boton-anos-biografia {
+    background: c(yellow);
+    width: 100%;
+    height: 50px;
+    display: flex;
+    font-size: 14px;
+    line-height: 17px;
+    @extend %opensans-bold;
+    color: c(black);
+    text-transform: uppercase;
+    align-items: center;
+    position: relative;
+}

@@ -1,0 +1,125 @@
+.relacionados {
+	background: c(gray-light);
+	width: 100%;
+
+	.grid__container {
+		@include under(md) {
+		    width: 95%;
+		    margin: 0 auto;
+		}
+	}
+
+	&__contenedor {
+		display: flex;
+		width: 100%;
+		margin: 100px auto;
+		@include under(mobile) {
+			margin: 40px auto;
+			flex-direction: column;
+		}
+	}
+
+	/* A r c h i v o s */
+	.archivos {
+		width: 50%;
+		padding: 0 20px;
+		@extend %contenido-wysiwyg;
+		@include under(sm) {
+			padding: 0 10px;
+		}
+		@include under(mobile) {
+			width: 100%;
+			margin-bottom: 40px;
+		}
+
+
+		&__titulo {
+			@extend %single-post-titulo-relacionados;
+			border-bottom: 2px solid c(black);
+			font-weight: normal;
+			margin-bottom: 10px;
+			padding-bottom: 10px;
+		}
+
+		&__lista {
+			@extend %single-post-relacionados;
+			padding-left: 20px;
+			font-weight: bold;
+			@include under(sm) {
+				padding-left: 10px;
+			}
+
+			li {
+				padding: 15px 0;
+				border-bottom: 1px solid c(gray);
+				padding-left: 20px;
+
+    			&::before {
+    				content: "\00b7";
+    			}
+    			&:hover {
+					color: c(black);
+
+    			}
+				a {
+					text-decoration: none !important;
+				}
+			}
+		}
+
+		&__item {
+
+		}
+	}
+	/* R e f e r e n c i a s */
+	.referencias {
+		width: 50%;
+		padding: 0 20px;
+		@extend %contenido-wysiwyg;
+
+		@include under(sm) {
+			padding: 0 10px;
+		}
+		@include under(mobile) {
+			width: 100%;
+		}
+
+		&__titulo {
+			@extend %single-post-titulo-relacionados;
+			border-bottom: 2px solid c(black);
+			margin-bottom: 10px;
+			padding-bottom: 10px;
+		}
+
+		&__lista {
+			@extend %single-post-relacionados;
+
+			@include under(sm) {
+				padding-left: 10px;
+			}
+
+			li {
+				padding: 15px 0;
+    			border-bottom: 1px solid c(gray);
+				padding-left: 20px;
+
+				&::before {
+    				content: "\00b7";
+    			}
+
+    			&:hover {
+					color: c(black);
+    			}
+
+    			a {
+					text-decoration: none !important;
+				}
+			}
+		}
+
+		&__item {
+			padding: 15px 0;
+    		border-bottom: 1px solid c(gray);
+		}
+	}
+}
